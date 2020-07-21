@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="tallerjs.css">
+    <style>.error{
+        border: 2px solid red;
+    }</style>
 </head>
+
 <body>
+    <h1>formulario</h1>
+    <form action="procesar.php" method="post" id="miFormulario">
+        <table>
+            <tr>
+                <td>Nombre*:</td>
+                <td>
+                    <input type="text" name="nombre" id="nombre" minlength="5"
+                    maxlength="15" pattern="[A-Za-z]{2,15}"
+                    title="Introduce entre 2 y 15 letras" />
+                </td>
+            </tr>
+            <tr>
+                <td>Edad*:</td>
+                <td>
+                    <input type="number" name="edad" id="edad"
+                     min="18" max="100" >
+                </td>
+            </tr>
+            <tr>
+                <td>Telefono*:</td>
+                <td>
+                    <input type="number" name="telefono" id="telefono"
+                     pattern="[0-10] {10}" title="Numero de cifra es 9" >
+                </td>
+            </tr>
+            <tr>
+                <td>Correo*:</td>
+                <td>
+                    <input type="email" name="email" id="email" 
+                     title="email "  size="30" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Profesion*:</td>
+                <td>
+                    <input type="text" name="profesion" id="profesion"
+                    maxlength="15" pattern="[A-Za-z]{2,15}"
+                    title="Introduce entre 2 y 15 letras" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Direccion*:</td>
+                <td>
+                    <input type="text" name="direccion" id="direccion"
+                     min="8" max="15" required>
+                </td>
+            </tr>
+        </table>
+        <p id="mensajeError"></p>
+        <p>
+            <input type="submit" value="Enviar" id="enviar">
+            <input type="reset" value="Borrar" id="borrar">
+        </p>
+    </form>
     
+
+
+
+    <script src="taller js/tallerjs.js"></script>
 </body>
+
 </html>
+
+
+
+
+<!--
+    <form action="" class="datos" id="formulario" onsubmit="return validar();">
+
+        <h2 class="titulo">FORMULARIO punto4</h2>
+        <input class="parte3" type="text" name="nombre" onblur="(revisar(this))" id="nombre">
+        <label for="nombre" class="parte3_1">Nombre</label>
+
+        <input class="parte3" type="number" name="edad" onblur="(revisar(this))" id="edad">
+        <label for="edad" class="parte3_1"ocupacion>edad</label>
+
+        <input class="parte3" type="text" name="ocupacion" onblur="(revisar(this))" id="ocupacion">
+        <label for="ocupacion" class="parte3_1"ocupacion>Ocupacion</label>
+
+        <input class="parte3" type="email" name="correo" onblur="(revisar(this))" id="correo">
+        <label for="correo" class="parte3_1">correo</label>
+
+        <input class="parte3" type="tel" name="telefono" onblur="(revisar(this))" id="telefono>
+        <label for="telefono" class="parte3_1">telefono</label>
+
+        <input class="parte3" type="text" name="direccion" onblur="(revisar(this))" id="direccion">
+        <label for="direccion" class="parte3_1"ocupacion>Direccion</label>
+
+    
+        <input type="submit" value="enviar" onclick="return enviarformulario();" class="parte4">
+        <p class="warnings" id="warnings"></p>
+
+    </form> 
+
+
+
+    <select name="desplegable" class="parte3" id="desplegable" onchange="desplegableChange()">
+            <option value="0">sin trabajo actualmente</option>
+            <option value="1">maestro</option>
+            <option value="4">finanzas</option>
+            <option value="5">chef</option>
+        </select>
+        <label for="" class="parte3_1" id="desplegable">desplegable de interes</label>
+ -->
