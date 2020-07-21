@@ -78,42 +78,41 @@ function validaDireccion() {
     }
     return true;
 }
-/* 
-function validaEmail() {
-    var elemento = document.getElementById('email');
-    if (!elemento.checkValidity()) {
-        var msg = '';
-        var hayArroba = false;
-        var hayPunto = false;
-        for (var i = 0; i < email.length; i++) {
-            if (email[i] == '@') {
-                hayArroba = true;
-                error2(elemento, "el @")
-            }
-            if (email[i] == '.') {
-                hayPunto = true;
-                error2(elemento, "el punto")
-            }
-        }
-        if (hayArroba == false && hayPunto == false) {
-            msg = 'Faltan el símbolo \'@\' y el \'.\'';
-        } else {
-            if (hayArroba == false) {
-                msg = 'Falta el símbolo \'@\' en el correo electrónico.';
-            }
-            if (hayPunto == false) {
-                msg = 'Falta el símbolo \'.\' en el correo electrónico.';
-            }
-        }
-        return msg;
-    }
 
-    return true;
-} */
+function validaEmail() {
+    var email = document.getElementById('email').value;
+    var msg = '';
+    var hayArroba = false;
+    var hayPunto = false;
+    console.log("entr{e", email)
+    for (var i = 0; i < email.length; i++) {
+        if (email[i] == '@') {
+            hayArroba = true;
+        }
+        if (email[i] == '.') {
+            hayPunto = true;
+        }
+    }
+    if (hayArroba == false && hayPunto == false) {
+        msg = 'Faltan el símbolo \'@\' y el \'.\'';
+    } else {
+        if (hayArroba == false) {
+            error2(document.getElementById('email'), 'Falta el símbolo \'@\' en el correo electrónico.')
+        }
+        if (hayPunto == false) {
+            error2(document.getElementById('email'), "Falta el símbolo \'.\' en el correo electrónico.")
+            
+        }
+    }
+    return false;
+    return msg;
+
+
+}
 
 function validar(e) {
     borrarError();
-    if (validaNombre() && validaEdad() && validaTelefono() && confirm('Pulsad aceptar si deseas enviar')) {
+    if (validaNombre() && validaEdad() && validaTelefono() && validaEmail() && confirm('Pulsad aceptar si deseas enviar')) {
         return true
     } else {
         e.preventDefault();
@@ -142,7 +141,7 @@ function borrarError() {
 }
 
 
-/* 
+/*
 var input = document.getElementsByClassName('parte3');
 for (var i = 0; i < input.length; i++) {
     input[i].addEventListener('keyup', function () {
@@ -253,7 +252,7 @@ function validandoando() {
 
 
 
-  
+
 
 
 
